@@ -1,8 +1,8 @@
 require "nvchad.options"
 
-vim.o.tabstop = 4 -- Number of spaces a tab counts for
-vim.o.shiftwidth = 4 -- Number of spaces for auto-indent
-vim.o.expandtab = true -- Use spaces instead of tab characters
+vim.opt.tabstop = 4 -- Number of spaces a tab counts for
+vim.opt.shiftwidth = 4 -- Number of spaces for auto-indent
+vim.opt.expandtab = true -- Use spaces instead of tab characters
 
 local backupdir = vim.fn.stdpath("data") .. "/backup//"
 vim.opt.backupdir = backupdir
@@ -15,4 +15,8 @@ vim.fn.mkdir(swapdir, "p")
 local undodir = vim.fn.stdpath("data") .. "/undo//"
 vim.opt.undodir = undodir
 vim.fn.mkdir(undodir, "p")
+
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
