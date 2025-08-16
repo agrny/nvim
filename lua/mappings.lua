@@ -5,7 +5,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-map('t', '<leader>tt', [[<C-\><C-n>]], { noremap = true, silent = true , desc = "Exit terminal mode" })
+map("t", "<leader>tt", [[<C-\><C-n>]], { noremap = true, silent = true, desc = "Exit terminal mode" })
 -- Copilot Suggestion Acceptance Key
 map("i", "<C-l>", function()
 	vim.fn.feedkeys(vim.fn["copilot#Accept"](), "")
@@ -23,21 +23,9 @@ vim.keymap.set("x", "<leader>R", [[:<C-u>%s/<C-r>0//g<Left><Left>]], { noremap =
 vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "" })
 
 -- Open a new Zellij pane and run opencode in the current working directory
-vim.keymap.set("n", "<leader>o", function()
+vim.keymap.set("n", "<leader>u", function()
 	-- local cwd = vim.fn.getcwd()
 	vim.fn.jobstart({ "zellij", "action", "new-pane", "--cwd", "$(pwd)", "--", "opencode" }, { detach = true })
 end, { noremap = true, silent = true })
 
--- TODO: Opens new tab but doesnt run command in it
--- vim.keymap.set("n", "<leader>O", function()
---   -- local cwd = vim.fn.getcwd()
---   vim.fn.jobstart(
---     { "zellij", "action", "new-tab" },
---     { detach = true }
---   )
---  vim.fn.jobstart({ "zellij", "action", "focus-next-tab" }, { detach = true })
---   vim.fn.jobstart(
---     { "zellij", "action", "run" , "--command", "opencode"} ,
---     { detach = true }
---   )
--- end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>op", require("telescope").extensions.orgmode.search_headings)
