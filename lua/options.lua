@@ -17,6 +17,8 @@ vim.opt.undodir = undodir
 vim.fn.mkdir(undodir, "p")
 
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 
+vim.opt.foldmethod = "expr" -- Use expression for folding
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- Use Treesitter
+vim.opt.foldlevel = 99 -- Open all folds by default
+vim.opt.foldenable = true -- Enable folding
