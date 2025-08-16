@@ -21,6 +21,10 @@ return {
 			vim.g.copilot_assume_mapped = true
 		end,
 	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+	},
 	-- test new blink
 	-- { import = "nvchad.blink.lazyspec" },
 
