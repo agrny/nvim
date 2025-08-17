@@ -2,7 +2,7 @@
 -- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 -- Please read that file to know all available options :( 
 
----@type ChadrcConfig
+---@class ChadrcConfig
 local M = {}
 
 M.base46 = {
@@ -20,5 +20,12 @@ M.base46 = {
 --          lazyload = false
 --      }
 -- }
+
+---@type ChadrcConfig
+M.options = {
+  lsp = {
+    format_on_save = true,
+  },
+}
 
 return M

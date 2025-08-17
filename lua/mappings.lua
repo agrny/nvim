@@ -29,3 +29,6 @@ vim.keymap.set("n", "<leader>u", function()
 end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>op", require("telescope").extensions.orgmode.search_headings)
+
+vim.keymap.set("n", "<leader>gd", ":Copilot disable<CR>", {noremap = true, silent=true, desc="Disable Copilot"})
+vim.keymap.set("n", "<leader>ge", ":Copilot enable<CR>", {noremap = true, silent=true, desc="Enable Copilot"})
