@@ -3,7 +3,6 @@ local map = vim.keymap.set
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("t", "<leader>tt", [[<C-\><C-n>]], { noremap = true, silent = true, desc = "Exit terminal mode" })
 -- Copilot Suggestion Acceptance Key
@@ -34,3 +33,4 @@ vim.keymap.set("n", "<leader>gd", ":Copilot disable<CR>", {noremap = true, silen
 vim.keymap.set("n", "<leader>ge", ":Copilot enable<CR>", {noremap = true, silent=true, desc="Enable Copilot"})
 
     vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", { noremap = true, silent = true, desc = "Change directory to current file's directory" })
+vim.keymap.set("n", "<C-m>", "<Nop>", { noremap = true, silent = true})

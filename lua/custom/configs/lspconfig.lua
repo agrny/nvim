@@ -5,15 +5,15 @@ local lspconfig = require("lspconfig")
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities
 
--- List of LSP servers you want default setup for (Mason installs them)
-local servers = { "html", "cssls", "clangd" }
-
-for _, lsp in ipairs(servers) do
-	lspconfig[lsp].setup({
-		on_attach = on_attach,
-		capabilities = capabilities,
-	})
-end
+-- -- List of LSP servers you want default setup for (Mason installs them)
+-- local servers = { "html", "cssls", "clangd" }
+--
+-- for _, lsp in ipairs(servers) do
+-- 	lspconfig[lsp].setup({
+-- 		on_attach = on_attach,
+-- 		capabilities = capabilities,
+-- 	})
+-- end
 
 -- Custom gopls setup
 lspconfig.gopls.setup({
@@ -33,3 +33,11 @@ lspconfig.gopls.setup({
 		},
 	},
 })
+--
+-- local null_ls = require("null-ls")
+-- null_ls.setup({
+--   sources = {
+--     null_ls.builtins.diagnostics.shellcheck,   -- Linting
+--     null_ls.builtins.formatting.shfmt,         -- Formatting
+--   },
+-- })
