@@ -29,9 +29,15 @@ end, { noremap = true, silent = true })
 
 vim.keymap.set("n", "<leader>op", require("telescope").extensions.orgmode.search_headings)
 
-vim.keymap.set("n", "<leader>gd", ":Copilot disable<CR>", {noremap = true, silent=true, desc="Disable Copilot"})
-vim.keymap.set("n", "<leader>ge", ":Copilot enable<CR>", {noremap = true, silent=true, desc="Enable Copilot"})
+vim.keymap.set("n", "<leader>gd", ":Copilot disable<CR>", { noremap = true, silent = true, desc = "Disable Copilot" })
+vim.keymap.set("n", "<leader>ge", ":Copilot enable<CR>", { noremap = true, silent = true, desc = "Enable Copilot" })
 
-    vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", { noremap = true, silent = true, desc = "Change directory to current file's directory" })
-vim.keymap.set("n", "<C-m>", "<Nop>", { noremap = true, silent = true})
+vim.keymap.set(
+	"n",
+	"<leader>cd",
+	":cd %:p:h<CR>:pwd<CR>",
+	{ noremap = true, silent = true, desc = "Change directory to current file's directory" }
+)
+vim.keymap.set("n", "<C-m>", "<Nop>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-n>", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP Show references" })

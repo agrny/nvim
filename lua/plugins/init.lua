@@ -75,14 +75,14 @@ return {
 			})
 		end,
 	},
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				bashls = {}, -- Enables bash-language-server
-			},
-		},
-	},
+	-- {
+	-- 	"neovim/nvim-lspconfig",
+	-- 	opts = {
+	-- 		servers = {
+	-- 			bashls = {}, -- Enables bash-language-server
+	-- 		},
+	-- 	},
+	-- },
 	{
 		"nvimtools/none-ls.nvim",
 		config = function()
