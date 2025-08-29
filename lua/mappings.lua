@@ -34,3 +34,4 @@ vim.keymap.set("n", "<leader>ge", ":Copilot enable<CR>", {noremap = true, silent
 
     vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>:pwd<CR>", { noremap = true, silent = true, desc = "Change directory to current file's directory" })
 vim.keymap.set("n", "<C-m>", "<Nop>", { noremap = true, silent = true})
+vim.keymap.set("n", "<C-n>", "<CMD>Oil<CR>", { desc = "Open parent directory" })

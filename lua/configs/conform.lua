@@ -7,6 +7,7 @@ local options = {
 		sh = { "shfmt" },
 		bash = { "shfmt" },
 		zsh = { "shfmt" },
+        js = {"prettier"}
 	},
 
 	-- format_on_save = {
