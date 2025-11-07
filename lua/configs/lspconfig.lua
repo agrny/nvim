@@ -1,20 +1,20 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require("lspconfig")
+-- Keep the NvChad functions for compatibility
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
--- Basic servers
-local servers = { "html", "cssls", "clangd", "bashls"}
+-- Basic servers using new vim.lsp.config API
+local servers = { "html", "cssls", "clangd", "bashls", "ts_ls" }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({
+  vim.lsp.config[lsp] = {
     on_attach = on_attach,
     capabilities = capabilities,
-  })
+  }
 end
 
--- Custom gopls setup
-lspconfig.gopls.setup({
+-- Custom gopls setup using new vim.lsp.config API
+vim.lsp.config.gopls = {
   on_attach = on_attach,
   capabilities = capabilities,
   settings = {
@@ -29,4 +29,4 @@ lspconfig.gopls.setup({
       hoverKind = "FullDocumentation",
     },
   },
-})
+}
